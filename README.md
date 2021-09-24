@@ -13,7 +13,7 @@ my gnome configuration:
 ## requirements
 
 - conky
-- curl
+- curl (for openweathermap)
 - jq
 
 ## installation
