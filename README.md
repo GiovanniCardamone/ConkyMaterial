@@ -2,6 +2,14 @@
 
 ![preview](./assets/example.png)
 
+my gnome configuration:
+
+- gnome-shell: 3.36
+- icons: EPapirus
+- theme applications: MateriaBreath-light
+- theme shell: MaterialBreath-dark
+- theme cursor: Material_light_cursors
+
 ## requirements
 
 - conky
