@@ -1,0 +1,42 @@
+conky.config = {
+	lua_load = './net.lua',
+	lua_draw_hook_pre = 'main',
+
+	update_interval = 30,
+
+	own_window = true,
+	own_window_type = 'dock',
+  own_window_class = 'conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0, -- transparent
+	own_window_colour = '000000',
+
+	double_buffer = true,
+	background = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+
+	alignment = 'top_left',
+	gap_x = 288,
+	gap_y = 16,
+	minimum_height = 95,
+	minimum_width = 256,
+	maximum_width = 256,
+
+	font = 'GT America:size=13',
+	use_xft = true,
+	xftalpha = 1,
+
+	color1 = '#f9a825',
+	color2 = '#ffffff',
+
+};
+
+conky.text = [[
+${color1}${voffset 0}${offset 4}${font GT America:size=13:bold}NET${alignr 4}${color2}${font GT America:size=13}${if_up wlp62s0}(wlp62s0) ${addrs wlp62s0}${endif}
+${if_up wlp62s0}${offset 4}${color3}${font Open Sans:size=9}Down: ${downspeed wlp62s0}/s ${alignr 4}Up: ${upspeed wlp62s0}/s
+${offset 4}${color1}${color1}${downspeedgraph wlp62s0 20,120}${alignr 4}${color1}${upspeedgraph wlp62s0 20,120}
+${offset 4}${color3}Total: ${totaldown wlp62s0} ${alignr 4}Total: ${totalup wlp62s0}${endif}]];

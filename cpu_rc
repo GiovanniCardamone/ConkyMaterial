@@ -1,0 +1,49 @@
+conky.config = {
+	lua_load = './cpu.lua',
+	lua_draw_hook_pre = 'main',
+
+	update_interval = 5,
+
+	own_window = true,
+	own_window_type = 'dock',
+  own_window_class = 'conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0, -- transparent
+	own_window_colour = '000000',
+
+	double_buffer = true,
+	background = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+
+	alignment = 'top_left',
+	gap_x = 288,
+	gap_y = 438,
+	minimum_height = 168,
+	minimum_width = 168,
+	maximum_width = 168,
+
+	font = 'GT America:size=13',
+	use_xft = true,
+	xftalpha = 1,
+	total_run_times = 0,
+
+	color1 = '#f9a825',
+	color2 = '#ffffff',
+	color3 = '#f9a825',
+
+	default_color = '#00aec5',
+	times_in_seconds = true,
+
+	default_bar_size = 30,248
+};
+
+conky.text = [[
+${color1}${voffset 0}${offset 4}${font GT America:size=13:bold}CPU${alignr 32}${color2}${font GT America:size=13}i7-9750H
+${offset 4}${color2}${font GT America:size=8}CPU FREQ ${alignr 50}${freq_g 1} GHz
+${offset 4}${color2}${font GT America:size=8}CPU PERC ${alignr 65}${cpu 1} %
+${offset 4}${color2}${font GT America:size=8}CPU COUNT${alignr 80}12
+]];

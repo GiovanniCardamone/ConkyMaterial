@@ -1,0 +1,50 @@
+conky.config = {
+	lua_load = './sensors.lua',
+	lua_draw_hook_pre = 'main',
+
+	update_interval = 60,
+
+	own_window = true,
+	own_window_type = 'dock',
+  own_window_class = 'conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0, -- transparent
+	own_window_colour = '000000',
+
+	double_buffer = true,
+	background = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+
+	alignment = 'top_left',
+	gap_x = 288,
+	gap_y = 216,
+	minimum_height = 123,
+	minimum_width = 120,
+	maximum_width = 120,
+
+	font = 'GT America:size=13',
+	use_xft = true,
+	xftalpha = 1,
+	update_interval = 120,
+
+	color1 = '#f9a825',
+	color2 = '#ffffff',
+
+
+};
+
+conky.text = [[
+${color1}${voffset 0}${offset 4}${font GT America:size=13:bold}SENSORS${alignr 4}${color2}${font GT America:size=13}
+${color3}${voffset 0}${offset 4}${font GT America:size=8}BAT V ${alignr 4}${exec sensors BAT0-acpi-0 | grep 'in0' | cut -c15-21}
+${color3}${voffset 0}${offset 4}${font GT America:size=8}BAT A ${alignr 4}${exec sensors BAT0-acpi-0 | grep 'curr1' | cut -c15-21}
+${color3}${voffset 0}${offset 4}${font GT America:size=8}HDD   ${alignr 4}${exec sensors nvme-pci-3c00 | grep 'Composite' | cut -c15-22}
+${color3}${voffset 0}${offset 4}${font GT America:size=8}CPU   ${alignr 4}${exec sensors coretemp-isa-0000 | grep 'Package' | cut -c15-23}
+${color3}${voffset 0}${offset 4}${font GT America:size=8}GPU   ${alignr 4}${nvidia temp}°C
+${color3}${voffset 0}${offset 4}${font GT America:size=8}Wifi  ${alignr 4}${exec sensors iwlwifi_1-virtual-0 | grep 'temp' | cut -c15-22}
+]];
+
+-- ${color3}${voffset 0}${offset 4}${font GT America:size=8}GPU   ${alignr 4}${nvidia temp}°C

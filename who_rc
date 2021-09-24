@@ -1,0 +1,41 @@
+conky.config = {
+	lua_load = './who.lua',
+	lua_draw_hook_pre = 'main',
+
+	update_interval = 60,
+
+	own_window = true,
+	own_window_type = 'dock',
+  own_window_class = 'conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0, -- transparent
+	own_window_colour = '000000',
+
+	double_buffer = true,
+	background = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+
+	alignment = 'top_left',
+	gap_x = 425,
+	gap_y = 216,
+	minimum_height = 123,
+	minimum_width = 119,
+	maximum_width = 119,
+
+	font = 'GT America:size=13',
+	use_xft = true,
+	xftalpha = 1,
+	update_interval = 60,
+
+	color1 = '#f9a825',
+	color2 = '#ffffff',
+
+};
+
+conky.text = [[
+${color1}${voffset 0}${offset 4}${font GT America:size=13:bold}WHO${alignr 4}${color2}${font GT America:size=13}${exec exec who | grep -v "(N)" | wc -l}
+${font GT America:size=9}${exec who | grep -v "(N)" | awk '{print $1 " @ " $5}'}]];

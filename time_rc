@@ -1,0 +1,44 @@
+conky.config = {
+	lua_load = './time.lua',
+	lua_draw_hook_pre = 'main',
+
+	update_interval = 60,
+
+	own_window = true,
+	own_window_type = 'dock',
+  own_window_class = 'conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0, -- transparent
+	own_window_colour = '000000',
+
+	double_buffer = true,
+	background = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+
+	alignment = 'top_left',
+	gap_x = 16,
+	gap_y = 16,
+	minimum_height = 120,
+	minimum_width = 256,
+	maximum_width = 256,
+
+	font = 'GT America:size=13',
+	use_xft = true,
+	xftalpha = 1,
+	update_interval = 60,
+
+	color1 = '#f9a825',
+	color2 = '#ffffff',
+
+};
+
+-- ${execi 3600 ./weather.sh}
+
+conky.text = [[
+${execi 3600 ./weather.sh}${color1}${voffset 0}${offset 4}${font GT America:size=13:bold}TIME${alignr 4}${color2}${font GT America:size=13}${time %a %d %B}
+${color2}${font GT America:size=50}${voffset -10}${alignr 2}${time %I:%M}
+${color2}${font GT America:size=9}${voffset -46}${offset 4}${lua_parse format_weather}${alignr 4}${font GT America:size=13}${voffset -5}uptime: ${uptime_short}${voffset -24}]];

@@ -1,0 +1,40 @@
+conky.config = {
+	lua_load = './system.lua',
+	lua_draw_hook_pre = 'main',
+
+	own_window = true,
+	own_window_type = 'dock',
+  own_window_class = 'conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0, -- transparent
+	own_window_colour = '000000',
+
+	double_buffer = true,
+	background = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+
+	alignment = 'top_left',
+	gap_x = 16,
+	gap_y = 152,
+	minimum_height = 48,
+	minimum_width = 256,
+	maximum_width = 256,
+
+	font = 'GT America:size=13',
+	use_xft = true,
+	xftalpha = 1,
+	total_run_times = 0,
+
+	color1 = '#f9a825',
+	color2 = '#ffffff',
+	color3 = '#006977',
+
+};
+
+conky.text = [[
+${color1}${offset 4}${font GT America:size=13:bold}SYSTEM${alignr 4}${color2}${font GT America:size=13}${nodename}
+${color2}${voffset 0}${alignc 0}${font GT America:size=9}${exec lsb_release -i | awk '{print $3}'} ${exec lsb_release -c | awk '{print $2}'} (${exec lsb_release -r | awk '{print $2}'}). Kernel: ${kernel}]];

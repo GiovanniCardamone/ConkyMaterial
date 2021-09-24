@@ -1,0 +1,42 @@
+conky.config = {
+	lua_load = './todo.lua',
+	lua_draw_hook_pre = 'main',
+
+	update_interval = 60,
+
+	own_window = true,
+	own_window_type = 'dock',
+  own_window_class = 'conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0, -- transparent
+	own_window_colour = '000000',
+
+	double_buffer = true,
+	background = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+
+	alignment = 'top_left',
+	gap_x = 560,
+	gap_y = 16,
+	minimum_height = 316,
+	minimum_width = 319,
+	maximum_width = 319,
+
+	font = 'GT America:size=13',
+	use_xft = true,
+	xftalpha = 1,
+
+	color1 = '#f9a825',
+	color2 = '#ffffff',
+
+	default_color = '#00aec5',
+	times_in_seconds = true,
+};
+
+conky.text = [[
+${color1}${voffset 0}${offset 4}${font GT America:size=13:bold}TODO${alignr 32}${color2}${font GT America:size=13}${execi 10 cat /home/step/.local/share/todo.txt/todo.txt | sed '/^\s*$/d' | wc -l}
+${font GT America:size=12}${execi 10 cat /home/step/.local/share/todo.txt/todo.txt | head -8}]];

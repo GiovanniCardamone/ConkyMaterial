@@ -1,0 +1,11 @@
+--2021-02-24 16:25:54--  http://rss.accuweather.com/rss/liveweather_rss.asp?metric=1&locCode=EUR%7CIT%7CSOMMA-VESUVIANA
+Resolving rss.accuweather.com (rss.accuweather.com)... 23.50.153.135
+Connecting to rss.accuweather.com (rss.accuweather.com)|23.50.153.135|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2662 (2,6K) [text/xml]
+Saving to: ‘liveweather_rss.asp?metric=1&locCode=EUR|IT|SOMMA-VESUVIANA’
+
+     0K ..                                                    100%  419M=0s
+
+2021-02-24 16:25:54 (419 MB/s) - ‘liveweather_rss.asp?metric=1&locCode=EUR|IT|SOMMA-VESUVIANA’ saved [2662/2662]
+

@@ -1,0 +1,48 @@
+conky.config = {
+	lua_load = './gpu.lua',
+	lua_draw_hook_pre = 'main',
+
+	update_interval = 5,
+
+	own_window = true,
+	own_window_type = 'dock',
+  own_window_class = 'conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0, -- transparent
+	own_window_colour = '000000',
+
+	double_buffer = true,
+	background = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+
+	alignment = 'top_left',
+	gap_x = 288,
+	gap_y = 355,
+	minimum_height = 68,
+	minimum_width = 249,
+	maximum_width = 249,
+
+	font = 'GT America:size=13',
+	use_xft = true,
+	xftalpha = 1,
+	total_run_times = 0,
+
+	color1 = '#f9a825',
+	color2 = '#ffffff',
+	color3 = '#f9a825',
+
+	default_color = '#00aec5',
+	times_in_seconds = true,
+
+	default_bar_size = 30,248
+};
+
+conky.text = [[
+${color1}${voffset 0}${offset 4}${font GT America:size=13:bold}GPU${alignr 32}${color2}${font GT America:size=13}GeForce RTX 2070Q
+${offset 4}${color2}${font GT America:size=8}GPU ${offset 2}FREQ ${alignr 50}${nvidia gpufreq} MHz
+${offset 4}${color2}${font GT America:size=8}MEM FREQ ${alignr 63}${nvidia memfreq} MHz
+]];
