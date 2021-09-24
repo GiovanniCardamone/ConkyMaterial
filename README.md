@@ -44,6 +44,6 @@ run
 (if you want to run at boot like i do, sleep is suggested due to gui initialization)
 
 ```bash
-# in whatever startup manager you have
-<where you cloned the repo>/ConkyMaterial/launch_all_now.sh
+# in whatever startup manager you have (sleeps 9 seconds)
+<where you cloned the repo>/ConkyMaterial/launch_all.sh
 ```
