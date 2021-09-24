@@ -19,4 +19,4 @@ LON=$( jq -r '.lon' <<< ${LOCATION} )
 
 # echo $LAT $LON
 
-curl "https://api.openweathermap.org/data/2.5/onecall?lat=${LAT}&lon=${LON}&units=metric&lang=it&exclude=minutely,hourly,daily,alerts&appid=${KEY}" -o weather.json
+curl "https://api.openweathermap.org/data/2.5/onecall?lat=${LAT}&lon=${LON}&units=metric&lang=it&exclude=minutely,hourly,daily,alerts&appid=${OPENWHEATERMAP_KEY}" -o weather.json
