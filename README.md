@@ -24,7 +24,7 @@ clone repository
 git clone https://github.com/GiovanniCardamone/ConkyMaterial.git
 ```
 
-get a key from [openwheatermap](https://developer.accuweather.com/)
+get a key from [openwheatermap](https://openweathermap.org/api)
 
 put the key in your environment
 
