@@ -44,6 +44,6 @@ conky.config = {
 conky.text = [[
 ${color1}${voffset 0}${offset 4}${font GT America:size=13:bold}CPU${alignr 32}${color2}${font GT America:size=13}i7-9750H
 ${offset 4}${color2}${font GT America:size=8}CPU FREQ ${alignr 50}${freq_g 1} GHz
-${offset 4}${color2}${font GT America:size=8}CPU PERC ${alignr 65}${cpu 1} %
-${offset 4}${color2}${font GT America:size=8}CPU COUNT${alignr 80}12
+${offset 4}${color2}${font GT America:size=8}CPU PERC ${alignr 67}${cpu 1} %
+${offset 4}${color2}${font GT America:size=8}CPU COUNT${alignr 82}12
 ]];
